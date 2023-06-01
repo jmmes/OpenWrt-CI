@@ -40,8 +40,8 @@ jobs:
     - name: Load upstream commits
       run: |
         git pull https://github.com/coolsnowwolf/lede.git --log --no-commit --allow-unrelated-histories
-        git commit -m "Resolved merge conflict by keeping README.md file."
-      
+        git checkout README.md
+        
     - name: Apply commit changes
       run: |
         if [ -f ./.git/MERGE_MSG ]; then
