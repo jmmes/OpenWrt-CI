@@ -40,6 +40,7 @@ jobs:
     - name: Load upstream commits
       run: git pull https://github.com/coolsnowwolf/lede.git --log --no-commit
            git pull origin master --allow-unrelated-histories
+           git push origin master:master
 
     - name: Apply commit changes
       run: |
