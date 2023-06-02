@@ -13,7 +13,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: 30 19 * * *
+    - cron: 30 19 * 1 *
 
 jobs:
 
@@ -38,6 +38,7 @@ jobs:
           # the feature/x ref is ambiguous at this stage
           git checkout master
           git merge --no-edit upstream/master
+          git pull origin master --allow-unrelated-histories
           git push origin master
           #git checkout master
           #git merge --no-edit upstream/master
