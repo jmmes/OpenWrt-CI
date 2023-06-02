@@ -36,10 +36,10 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global pull.rebase false
         git config --global --list
-        git pull --unshallow
-
+        
     - name: Load upstream commits
       run: git pull https://github.com/coolsnowwolf/lede.git --log --no-commit
+           git pull --unshallow
 
     - name: Apply commit changes
       run: |
