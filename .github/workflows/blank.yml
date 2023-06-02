@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Merge upstream
         run: |
           git config --global user.name "github-actions[bot]"
@@ -37,8 +37,7 @@ jobs:
           # Neither forget the -b opt,
           # the feature/x ref is ambiguous at this stage
           git checkout master
-          git merge --no-edit upstream/master
-          git pull origin master --allow-unrelated-histories
+          git merge --no-edit upstream/master --allow-unrelated-histories
           git push origin master
           #git checkout master
           #git merge --no-edit upstream/master
