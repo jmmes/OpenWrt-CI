@@ -38,9 +38,10 @@ jobs:
         git config --global --list
 
     - name: Load upstream commits
-      run : |
+      run: |
         git pull https://github.com/coolsnowwolf/lede.git --log --no-commit --allow-unrelated-histories
-        git rm README.md
+        git checkout README.md
+        git add README.md
         git commit
 
     - name: Apply commit changes
