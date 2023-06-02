@@ -1,13 +1,26 @@
-name: Merge upstream branches
+#
+# This is free software, lisence use MIT.
+# 
+# Copyright (C) 2021 KFERMercer <KFER.Mercer@gmail.com>
+# 
+# <https://github.com/KFERMercer/OpenWrt-CI>
+#
+
+name: Merge-upstream
+
 on:
   push:
+    branches:
+      - master
   schedule:
-     # actually, ~5 minutes is the highest
-     # effective frequency you will get
-    - cron:  '0 1 * * *'
+    - cron: 30 19 * * *
+
 jobs:
+
   merge:
+
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       - name: Merge upstream
